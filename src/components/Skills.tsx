@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { skills } from '../data/portfolioData';
+import { Card, CardHeader, CardTitle, CardContent } from './ui/card';
+import { Badge } from './ui/badge';
 
 const categoryIcons: Record<string, string> = {
   'Languages': '💻',
@@ -42,26 +44,28 @@ export const Skills: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group relative bg-[#161616] border border-white/10 rounded-xl p-6 hover:border-[#00d4ff]/60 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
-              {/* Top gradient border reveal on hover */}
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <Card className="group relative hover:border-[#00d4ff]/60 hover:-translate-y-1 overflow-hidden h-full">
+                {/* Top gradient border reveal on hover */}
+                <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
-              <div className="flex items-center gap-3 mb-5">
-                <span className="text-2xl">{categoryIcons[skillGroup.category] || '⚡'}</span>
-                <h3 className="text-white font-bold text-lg">{skillGroup.category}</h3>
-              </div>
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">{categoryIcons[skillGroup.category] || '⚡'}</span>
+                    <CardTitle className="text-lg">{skillGroup.category}</CardTitle>
+                  </div>
+                </CardHeader>
 
-              <div className="flex flex-wrap gap-2">
-                {skillGroup.items.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1.5 rounded-full text-xs font-medium text-gray-300 bg-[#00d4ff]/10 border border-[#00d4ff]/20 hover:border-[#00d4ff] hover:text-[#00d4ff] transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {skillGroup.items.map((skill) => (
+                      <Badge key={skill} variant="default">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>
@@ -71,4 +75,3 @@ export const Skills: React.FC = () => {
 };
 
 export default Skills;
-

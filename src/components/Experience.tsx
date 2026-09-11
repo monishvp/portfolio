@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaBriefcase } from 'react-icons/fa';
 import { experience } from '../data/portfolioData';
+import { Card, CardHeader, CardTitle, CardContent } from './ui/card';
+import { Badge } from './ui/badge';
 
 export const Experience: React.FC = () => {
   return (
@@ -42,28 +44,32 @@ export const Experience: React.FC = () => {
                 <FaBriefcase />
               </div>
 
-              {/* Content card */}
-              <div className="bg-[#161616] border border-white/10 rounded-xl p-6 md:p-8 hover:border-[#00d4ff]/60 transition-all duration-300 shadow-md">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
-                  <div>
-                    <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                    <p className="text-[#00d4ff] font-semibold text-sm">{exp.company}</p>
-                    <p className="text-gray-500 text-xs">{exp.location}</p>
+              {/* Content card with shadcn */}
+              <Card className="hover:border-[#00d4ff]/60">
+                <CardHeader className="pb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                      <CardTitle className="text-xl mb-1">{exp.title}</CardTitle>
+                      <p className="text-[#00d4ff] font-semibold text-sm">{exp.company}</p>
+                      <p className="text-gray-500 text-xs">{exp.location}</p>
+                    </div>
+                    <Badge variant="cyan" className="self-start sm:self-auto text-xs py-1">
+                      {exp.period}
+                    </Badge>
                   </div>
-                  <span className="self-start sm:self-auto px-4 py-1.5 rounded-full text-xs font-semibold bg-[#00d4ff]/10 text-[#00d4ff] border border-[#00d4ff]/20">
-                    {exp.period}
-                  </span>
-                </div>
+                </CardHeader>
 
-                <ul className="space-y-3">
-                  {exp.responsibilities.map((resp, j) => (
-                    <li key={j} className="text-gray-300 text-sm leading-relaxed flex items-start gap-2.5">
-                      <span className="text-[#00d4ff] font-bold mt-0.5">▸</span>
-                      <span>{resp}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {exp.responsibilities.map((resp, j) => (
+                      <li key={j} className="text-gray-300 text-sm leading-relaxed flex items-start gap-2.5">
+                        <span className="text-[#00d4ff] font-bold mt-0.5">▸</span>
+                        <span>{resp}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>
@@ -73,4 +79,3 @@ export const Experience: React.FC = () => {
 };
 
 export default Experience;
-

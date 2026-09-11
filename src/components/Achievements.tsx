@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaTrophy } from 'react-icons/fa';
 import { achievements } from '../data/portfolioData';
+import { Card } from './ui/card';
 
 export const Achievements: React.FC = () => {
   return (
@@ -34,12 +35,13 @@ export const Achievements: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex items-start gap-5 p-6 bg-[#161616] border border-white/10 rounded-xl hover:border-[#00d4ff]/60 hover:translate-x-1.5 transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-lg bg-[#7c3aed]/15 text-[#7c3aed] flex items-center justify-center text-lg shrink-0 mt-0.5">
-                <FaTrophy />
-              </div>
-              <p className="text-gray-300 text-sm md:text-base leading-relaxed">{item}</p>
+              <Card className="flex items-start gap-5 p-6 hover:border-[#00d4ff]/60 hover:translate-x-1.5">
+                <div className="w-10 h-10 rounded-lg bg-[#7c3aed]/15 text-[#7c3aed] flex items-center justify-center text-lg shrink-0 mt-0.5">
+                  <FaTrophy />
+                </div>
+                <p className="text-gray-300 text-sm md:text-base leading-relaxed">{item}</p>
+              </Card>
             </motion.div>
           ))}
         </div>
@@ -49,4 +51,3 @@ export const Achievements: React.FC = () => {
 };
 
 export default Achievements;
-

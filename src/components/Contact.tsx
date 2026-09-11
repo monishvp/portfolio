@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { personalInfo } from '../data/portfolioData';
+import { Card } from './ui/card';
 
 interface ContactCardItem {
   icon: React.ReactNode;
@@ -43,8 +44,8 @@ export const Contact: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {contactItems.map((item, i) => {
-            const content = (
-              <div className="flex items-center gap-4 p-6 bg-[#161616] border border-white/10 rounded-xl hover:border-[#00d4ff]/60 hover:-translate-y-1 transition-all duration-300 h-full">
+            const cardContent = (
+              <Card className="flex items-center gap-4 p-6 hover:border-[#00d4ff]/60 hover:-translate-y-1 h-full cursor-pointer">
                 <div className="w-12 h-12 rounded-xl bg-[#00d4ff]/10 text-[#00d4ff] flex items-center justify-center text-xl shrink-0 group-hover:bg-gradient-to-r group-hover:from-[#00d4ff] group-hover:to-[#7c3aed] group-hover:text-black transition-all duration-300">
                   {item.icon}
                 </div>
@@ -54,7 +55,7 @@ export const Contact: React.FC = () => {
                   </p>
                   <p className="text-white text-sm font-medium truncate">{item.value}</p>
                 </div>
-              </div>
+              </Card>
             );
 
             return (
@@ -73,10 +74,10 @@ export const Contact: React.FC = () => {
                     rel="noopener noreferrer"
                     className="block group h-full"
                   >
-                    {content}
+                    {cardContent}
                   </a>
                 ) : (
-                  <div className="h-full">{content}</div>
+                  <div className="h-full">{cardContent}</div>
                 )}
               </motion.div>
             );
@@ -88,4 +89,3 @@ export const Contact: React.FC = () => {
 };
 
 export default Contact;
-

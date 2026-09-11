@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaChevronDown } from 'react-icons/fa';
 import { personalInfo } from '../data/portfolioData';
+import { Button } from './ui/button';
 
 export const Hero: React.FC = () => {
   return (
@@ -27,11 +28,11 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="relative"
         >
-          <div className="w-44 h-44 rounded-full p-1 bg-gradient-to-tr from-[#00d4ff] to-[#7c3aed] shadow-[0_0_40px_rgba(0,212,255,0.3)]">
+          <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-[#00d4ff] to-[#7c3aed] shadow-[0_0_60px_rgba(0,212,255,0.4)]">
             <img
               src={personalInfo.profileImage}
               alt={personalInfo.name}
-              className="w-full h-full rounded-full object-cover border-4 border-[#0a0a0a]"
+              className="w-full h-full rounded-full object-cover object-center border-4 border-[#0a0a0a]"
             />
           </div>
         </motion.div>
@@ -56,48 +57,32 @@ export const Hero: React.FC = () => {
             {personalInfo.tagline}
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons using shadcn Button */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
-            <a
-              href="#contact"
-              className="px-8 py-3 rounded-lg font-semibold text-black bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] hover:shadow-[0_0_25px_rgba(0,212,255,0.5)] hover:-translate-y-0.5 transition-all duration-300"
-            >
-              Get In Touch
+            <a href="#contact">
+              <Button size="lg">Get In Touch</Button>
             </a>
-            <a
-              href="#projects"
-              className="px-8 py-3 rounded-lg font-semibold text-[#00d4ff] border border-[#00d4ff] hover:bg-[#00d4ff]/10 hover:-translate-y-0.5 transition-all duration-300"
-            >
-              View Projects
+            <a href="#projects">
+              <Button variant="outline" size="lg">View Projects</Button>
             </a>
           </div>
 
-          {/* Social Icons */}
-          <div className="flex items-center justify-center gap-5">
-            <a
-              href={personalInfo.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-gray-300 text-lg hover:text-[#00d4ff] hover:border-[#00d4ff] hover:bg-[#00d4ff]/10 hover:-translate-y-1 transition-all duration-300"
-              aria-label="GitHub"
-            >
-              <FaGithub />
+          {/* Social Icons using shadcn Button */}
+          <div className="flex items-center justify-center gap-4">
+            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <Button variant="icon" size="icon">
+                <FaGithub className="text-lg" />
+              </Button>
             </a>
-            <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-gray-300 text-lg hover:text-[#00d4ff] hover:border-[#00d4ff] hover:bg-[#00d4ff]/10 hover:-translate-y-1 transition-all duration-300"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin />
+            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Button variant="icon" size="icon">
+                <FaLinkedin className="text-lg" />
+              </Button>
             </a>
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-gray-300 text-lg hover:text-[#00d4ff] hover:border-[#00d4ff] hover:bg-[#00d4ff]/10 hover:-translate-y-1 transition-all duration-300"
-              aria-label="Email"
-            >
-              <FaEnvelope />
+            <a href={`mailto:${personalInfo.email}`} aria-label="Email">
+              <Button variant="icon" size="icon">
+                <FaEnvelope className="text-lg" />
+              </Button>
             </a>
           </div>
         </motion.div>
@@ -118,4 +103,3 @@ export const Hero: React.FC = () => {
 };
 
 export default Hero;
-

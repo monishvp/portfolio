@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGift, FaRobot } from 'react-icons/fa';
 import { projects } from '../data/portfolioData';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './ui/card';
+import { Badge } from './ui/badge';
 
 const iconMap = {
   gift: <FaGift />,
@@ -39,39 +41,42 @@ export const Projects: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="group relative bg-[#161616] border border-white/10 rounded-xl p-8 hover:border-[#00d4ff]/60 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
             >
-              {/* Top gradient highlight on hover */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <Card className="group relative hover:border-[#00d4ff]/60 hover:-translate-y-1.5 overflow-hidden h-full">
+                {/* Top gradient highlight on hover */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-              <div className="w-14 h-14 rounded-xl bg-[#00d4ff]/10 text-[#00d4ff] flex items-center justify-center text-2xl mb-6">
-                {iconMap[project.icon]}
-              </div>
+                <CardHeader>
+                  <div className="w-14 h-14 rounded-xl bg-[#00d4ff]/10 text-[#00d4ff] flex items-center justify-center text-2xl mb-2">
+                    {iconMap[project.icon]}
+                  </div>
+                  <CardTitle className="text-xl mb-1">{project.title}</CardTitle>
+                  <CardDescription className="leading-relaxed">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
 
-              <h3 className="text-white font-bold text-xl mb-3">{project.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">{project.description}</p>
+                <CardContent className="space-y-5">
+                  {/* Tech stack badges */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((t) => (
+                      <Badge key={t} variant="secondary">
+                        {t}
+                      </Badge>
+                    ))}
+                  </div>
 
-              {/* Tech stack badges */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="px-3 py-1 rounded-full text-xs font-medium text-[#7c3aed] bg-[#7c3aed]/10 border border-[#7c3aed]/20"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              {/* Highlights */}
-              <ul className="space-y-2.5 border-t border-white/10 pt-5">
-                {project.highlights.map((h, j) => (
-                  <li key={j} className="text-gray-400 text-xs md:text-sm leading-relaxed flex items-start gap-2">
-                    <span className="text-[#00d4ff] mt-0.5 text-xs">✦</span>
-                    <span>{h}</span>
-                  </li>
-                ))}
-              </ul>
+                  {/* Highlights list */}
+                  <ul className="space-y-2.5 border-t border-white/10 pt-5">
+                    {project.highlights.map((h, j) => (
+                      <li key={j} className="text-gray-400 text-xs md:text-sm leading-relaxed flex items-start gap-2">
+                        <span className="text-[#00d4ff] mt-0.5 text-xs">✦</span>
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>
@@ -81,4 +86,3 @@ export const Projects: React.FC = () => {
 };
 
 export default Projects;
-
