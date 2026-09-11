@@ -1,4 +1,6 @@
-export const personalInfo = {
+import { PersonalInfo, SkillCategory, ExperienceItem, ProjectItem, EducationItem } from '../types/portfolio';
+
+export const personalInfo: PersonalInfo = {
   name: 'Monish P',
   title: '.NET Developer',
   tagline: 'Building enterprise web applications with C#, ASP.NET, React & Angular',
@@ -11,7 +13,7 @@ export const personalInfo = {
   profileImage: `${import.meta.env.BASE_URL}images/profile.jpg`
 };
 
-export const skills = [
+export const skills: SkillCategory[] = [
   { category: 'Languages', items: ['C#', 'JavaScript', 'TypeScript', 'Python', 'SQL'] },
   { category: '.NET Technologies', items: ['ASP.NET', 'ASP.NET MVC', 'ASP.NET Web API', 'Entity Framework', 'LINQ', 'RESTful API Design', 'Microservices Concepts'] },
   { category: 'Frontend', items: ['AngularJS', 'React.js', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript'] },
@@ -20,7 +22,7 @@ export const skills = [
   { category: 'Practices', items: ['Full Stack Development', 'REST API Development', 'AI-Assisted Development', 'Workflow Automation (n8n)'] }
 ];
 
-export const experience = [
+export const experience: ExperienceItem[] = [
   {
     title: 'Software Developer',
     company: 'Brightspot Technology Solutions',
@@ -39,7 +41,7 @@ export const experience = [
   }
 ];
 
-export const projects = [
+export const projects: ProjectItem[] = [
   {
     title: 'Referral Reward Platform',
     tech: ['ASP.NET', 'C#', 'AngularJS', 'SQL Server', 'Power BI', 'REST APIs'],
@@ -65,7 +67,7 @@ export const projects = [
   }
 ];
 
-export const education = {
+export const education: EducationItem = {
   degree: 'Bachelor of Engineering',
   field: 'Electronics and Communication Engineering',
   university: 'Karpagam College of Engineering, Coimbatore',
@@ -73,15 +75,16 @@ export const education = {
   cgpa: '8.23'
 };
 
-export const achievements = [
+export const achievements: string[] = [
   'Recognized within the team for proactively building internal AI tooling that reduced repetitive manual work for developers.',
   'Took ownership of the Referral Reward Platform\'s reporting layer, improving dashboard load times and data accuracy for stakeholders.',
   'Maintained a CGPA of 8.23 in Electronics and Communication Engineering, reflecting strong analytical and problem-solving fundamentals.'
 ];
 
-export const strengths = [
+export const strengths: string[] = [
   'Strong grasp of OOP principles, design patterns, and writing maintainable, scalable code in C#.',
   'Comfortable owning a feature end-to-end — from database schema to API to frontend UI.',
   'Quick learner with a track record of picking up new tools and frameworks independently (AI agent development, workflow automation).',
   'Clear communicator who works well with cross-functional teams (product, QA, design) in Agile environments.'
 ];
+
