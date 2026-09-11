@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCode, FaServer, FaDatabase, FaRobot } from 'react-icons/fa';
 import { FaCode, FaServer, FaDatabase, FaCogs } from 'react-icons/fa';
 import { personalInfo } from '../data/portfolioData';
 
@@ -14,9 +13,6 @@ const highlights: HighlightItem[] = [
   { icon: <FaServer />, title: 'Backend & .NET', desc: 'ASP.NET, C#, Entity Framework' },
   { icon: <FaDatabase />, title: 'Database & SQL', desc: 'SQL Server, Query Optimization' },
   { icon: <FaCode />, title: 'Frontend', desc: 'React, AngularJS, TypeScript' },
-  { icon: <FaServer />, title: 'Backend', desc: 'ASP.NET, C#, Web API' },
-  { icon: <FaDatabase />, title: 'Database', desc: 'SQL Server, PostgreSQL' },
-  { icon: <FaRobot />, title: 'AI & Automation', desc: 'AI Agents, n8n Workflows' },
   { icon: <FaCogs />, title: 'APIs & Services', desc: 'RESTful Web APIs, Microservices' },
 ];
 
