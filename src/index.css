@@ -3,8 +3,8 @@
 @layer base {
   :root {
     --bg-primary: #0a0a0a;
-    --bg-secondary: #111111;
-    --bg-card: #161616;
+    --bg-secondary: #121217;
+    --bg-card: #16161c;
     --accent-primary: #00d4ff;
     --accent-secondary: #7c3aed;
   }
@@ -23,20 +23,20 @@
   }
 }
 
-/* Custom Scrollbar */
+/* Minimalist, subtle scrollbar flush with the page edge */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00d4ff;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
+  background: rgba(0, 212, 255, 0.5);
 }

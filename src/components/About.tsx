@@ -18,7 +18,7 @@ const highlights: HighlightItem[] = [
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 bg-[#111111] relative">
+    <section id="about" className="py-24 bg-[#111115] border-t border-white/[0.06] relative">
       <div className="max-w-6xl mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -79,25 +79,25 @@ export const About: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Core competency cards */}
+          {/* Core competency cards in balanced 2x2 grid */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 p-5 bg-[#161616] border border-white/10 rounded-xl hover:border-[#00d4ff]/60 hover:translate-x-1.5 transition-all duration-300"
+                className="flex flex-col gap-3 p-5 bg-[#161616] border border-white/10 rounded-xl hover:border-[#00d4ff]/60 hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-lg bg-[#00d4ff]/10 flex items-center justify-center text-[#00d4ff] text-xl shrink-0">
+                <div className="w-11 h-11 rounded-lg bg-[#00d4ff]/10 flex items-center justify-center text-[#00d4ff] text-xl shrink-0">
                   {item.icon}
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold text-base mb-0.5">{item.title}</h4>
-                  <p className="text-gray-400 text-xs md:text-sm">{item.desc}</p>
+                  <h4 className="text-white font-semibold text-base mb-1">{item.title}</h4>
+                  <p className="text-gray-400 text-xs leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}

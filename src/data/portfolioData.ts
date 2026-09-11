@@ -10,7 +10,8 @@ export const personalInfo: PersonalInfo = {
   linkedin: 'https://www.linkedin.com/in/monish-p-a12639219/',
   github: 'https://github.com/monishvp',
   summary: '.NET Developer with 2+ years of experience designing and building enterprise web applications using C#, ASP.NET Framework, ASP.NET MVC/Web API, Entity Framework, LINQ, and SQL Server. Experienced across the full Software Development Life Cycle — requirement analysis, API design, database optimization, testing, deployment, and production support. Frontend experience with AngularJS and React. Additional experience building AI-powered workflow automation tools and AI agent-driven applications, bringing a practical, efficiency-focused approach to development.',
-  profileImage: `${import.meta.env.BASE_URL}images/profile.png`
+  profileImage: `${import.meta.env.BASE_URL}images/profile_dark.png`,
+  resumeUrl: `${import.meta.env.BASE_URL}Monish_P_Resume.pdf`
 };
 
 export const skills: SkillCategory[] = [
@@ -45,9 +46,9 @@ export const projects: ProjectItem[] = [
   {
     title: 'Referral Reward Platform',
     tech: ['ASP.NET', 'C#', 'AngularJS', 'SQL Server', 'Power BI', 'REST APIs'],
-    description: 'End-to-end referral tracking and reward management platform supporting the full referral lifecycle.',
+    description: 'End-to-end referral tracking and reward management platform supporting the full referral lifecycle with automated approvals and KPI analytics.',
     highlights: [
-      'Built referral tracking and reward management features end-to-end using ASP.NET, C#, and SQL Server.',
+      'Built referral tracking and reward management features end-to-end using ASP.NET, C#, and SQL Server, supporting the full referral lifecycle.',
       'Automated reward approval and payout workflows, significantly cutting manual processing time and turnaround.',
       'Developed AngularJS UI modules for referral submission, status tracking, and reward history.',
       'Optimized SQL Server queries and indexes, improving reporting performance and system reliability.',
@@ -56,14 +57,17 @@ export const projects: ProjectItem[] = [
     icon: 'gift'
   },
   {
-    title: 'AraCrate — AI Feature Planner',
-    tech: ['React', 'FastAPI', 'Python', 'REST APIs', 'AI Agents'],
-    description: 'AI-powered requirement generation platform with backend REST APIs supporting AI agent-driven SRS generation.',
+    title: 'Corksy — Winery eCommerce & Reservation Platform',
+    tech: ['React.js', 'Node.js', 'GraphQL', 'PostgreSQL', 'Redux Toolkit', 'REST APIs'],
+    description: 'Comprehensive winery eCommerce and reservation platform powering real-time slot scheduling, table allocation, POS integrations, and merchant portal operations.',
     highlights: [
-      'Built an AI-powered requirement generation platform with backend REST APIs supporting AI agent-driven Software Requirement Specification (SRS) generation, reducing manual documentation effort.',
-      'Automated task breakdown and developer workflow generation, speeding up project planning cycles for the team.'
+      'Developed end-to-end reservation and booking workflows using React.js and GraphQL, supporting real-time slot scheduling, table allocation, and guest management.',
+      'Built and optimized PostgreSQL reporting queries and automated notification scripts, delivering accurate daily reservation, sales, and operational analytics.',
+      'Created responsive, embeddable eCommerce widgets enabling third-party merchant sites to seamlessly integrate online purchasing, event ticket booking, and cart checkout.',
+      'Enhanced Admin Web portal features using React and Redux Toolkit to streamline merchant catalog setup, order management, and reservation configurations.',
+      'Delivered UI improvements and operational bug fixes across Point-of-Sale (POS) and eCommerce modules, improving checkout speed and staff usability during peak hours.'
     ],
-    icon: 'robot'
+    icon: 'wine'
   }
 ];
 

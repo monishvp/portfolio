@@ -9,6 +9,7 @@ export interface PersonalInfo {
   github: string;
   summary: string;
   profileImage: string;
+  resumeUrl: string;
 }
 
 export interface SkillCategory {
@@ -29,7 +30,9 @@ export interface ProjectItem {
   tech: string[];
   description: string;
   highlights: string[];
-  icon: 'gift' | 'robot';
+  icon: 'gift' | 'robot' | 'wine';
+  githubUrl?: string;
+  liveUrl?: string;
 }
 
 export interface EducationItem {
@@ -39,4 +42,3 @@ export interface EducationItem {
   period: string;
   cgpa: string;
 }
-

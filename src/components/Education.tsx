@@ -7,7 +7,7 @@ import { Badge } from './ui/badge';
 
 export const Education: React.FC = () => {
   return (
-    <section id="education" className="py-24 bg-[#111111]">
+    <section id="education" className="py-24 bg-[#111115] border-t border-white/[0.06]">
       <div className="max-w-4xl mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

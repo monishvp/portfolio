@@ -62,6 +62,11 @@ export const Hero: React.FC = () => {
             <a href="#contact">
               <Button size="lg">Get In Touch</Button>
             </a>
+            <a href={personalInfo.resumeUrl} download="Monish_P_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <Button variant="secondary" size="lg" className="border border-white/20 hover:border-[#00d4ff]">
+                Download Resume
+              </Button>
+            </a>
             <a href="#projects">
               <Button variant="outline" size="lg">View Projects</Button>
             </a>
