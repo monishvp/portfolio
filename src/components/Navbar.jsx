@@ -28,9 +28,7 @@ function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <a href="#home" className="navbar-logo">
-          <span className="logo-bracket">&lt;</span>
-          Monish
-          <span className="logo-bracket">/&gt;</span>
+          Monish<span className="logo-dot"></span>
         </a>
 
         <div className={`navbar-links ${menuOpen ? 'active' : ''}`}>

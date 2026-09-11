@@ -9,9 +9,7 @@ function Footer() {
         <div className="footer-content">
           <div className="footer-logo">
             <a href="#home">
-              <span className="logo-bracket">&lt;</span>
-              Monish
-              <span className="logo-bracket">/&gt;</span>
+              Monish<span className="logo-dot">.</span>
             </a>
           </div>
 

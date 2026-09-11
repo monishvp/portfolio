@@ -7,7 +7,7 @@ const contactItems = [
   { icon: <FaEnvelope />, label: 'Email', value: personalInfo.email, href: `mailto:${personalInfo.email}` },
   { icon: <FaPhone />, label: 'Phone', value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
   { icon: <FaMapMarkerAlt />, label: 'Location', value: personalInfo.location, href: null },
-  { icon: <FaLinkedin />, label: 'LinkedIn', value: 'linkedin.com/in/monish-p', href: personalInfo.linkedin },
+  { icon: <FaLinkedin />, label: 'LinkedIn', value: 'linkedin.com/in/monish-p-a12639219', href: personalInfo.linkedin },
   { icon: <FaGithub />, label: 'GitHub', value: 'github.com/monishvp', href: personalInfo.github },
 ]
 

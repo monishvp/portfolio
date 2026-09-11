@@ -5,10 +5,10 @@ export const personalInfo = {
   location: 'Erode, Tamil Nadu, India',
   phone: '+91 9345789114',
   email: 'monishvp2002@gmail.com',
-  linkedin: 'https://linkedin.com/in/monish-p',
+  linkedin: 'https://www.linkedin.com/in/monish-p-a12639219/',
   github: 'https://github.com/monishvp',
   summary: '.NET Developer with 2+ years of experience designing and building enterprise web applications using C#, ASP.NET Framework, ASP.NET MVC/Web API, Entity Framework, LINQ, and SQL Server. Experienced across the full Software Development Life Cycle — requirement analysis, API design, database optimization, testing, deployment, and production support. Frontend experience with AngularJS and React. Additional experience building AI-powered workflow automation tools and AI agent-driven applications, bringing a practical, efficiency-focused approach to development.',
-  profileImage: '/images/profile.jpg'
+  profileImage: `${import.meta.env.BASE_URL}images/profile.jpg`
 };
 
 export const skills = [
@@ -17,7 +17,7 @@ export const skills = [
   { category: 'Frontend', items: ['AngularJS', 'React.js', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript'] },
   { category: 'Databases', items: ['Microsoft SQL Server', 'PostgreSQL', 'Database Design & Query Optimization'] },
   { category: 'Cloud & Tools', items: ['Azure Fundamentals', 'Git', 'GitHub', 'Visual Studio 2022', 'VS Code', 'Postman', 'Power BI'] },
-  { category: 'Practices', items: ['Full Stack Development', 'Agile/Scrum', 'REST API Development', 'AI-Assisted Development', 'Workflow Automation (n8n)'] }
+  { category: 'Practices', items: ['Full Stack Development', 'REST API Development', 'AI-Assisted Development', 'Workflow Automation (n8n)'] }
 ];
 
 export const experience = [
