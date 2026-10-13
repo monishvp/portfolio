@@ -2,34 +2,137 @@
 
 @layer base {
   :root {
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #121217;
-    --bg-card: #16161c;
-    --accent-primary: #00d4ff;
-    --accent-secondary: #7c3aed;
+    --font-display: 'Host Grotesk', 'Space Grotesk', system-ui, sans-serif;
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --bg-canvas: #070707;
+    --bg-surface: #0e0e0e;
+    --bg-card: #141414;
+    --accent-flame: #F16B0D;
+    --accent-crimson: #E61416;
+    --accent-amber: #FFA24C;
+    --accent-glow: rgba(241, 107, 13, 0.4);
   }
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+    scroll-padding-top: 90px;
+    background-color: var(--bg-canvas);
   }
 
   body {
-    background-color: #0a0a0a;
-    color: #b0b0b0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    line-height: 1.7;
+    background-color: var(--bg-canvas);
+    color: #e4e4e7;
+    font-family: var(--font-sans);
+    line-height: 1.65;
     overflow-x: hidden;
+    selection-background-color: #F16B0D;
+    selection-color: #ffffff;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
   }
 }
 
-/* Minimalist, subtle scrollbar flush with the page edge */
+/* ============ SIGNATURE ELENA VOSS GRADIENTS ============ */
+
+.bg-elena-gradient {
+  background: linear-gradient(135deg, #F16B0D 0%, #E61416 100%);
+}
+
+.text-elena-gradient {
+  background: linear-gradient(135deg, #F16B0D 0%, #FFA24C 50%, #FFD59E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-hero-ember {
+  background-color: #070707;
+  background-image: 
+    radial-gradient(65% 55% at 92% 8%, rgba(241, 107, 13, 0.32) 0%, rgba(241, 107, 13, 0) 65%),
+    radial-gradient(60% 55% at 4% 82%, rgba(230, 20, 22, 0.22) 0%, rgba(230, 20, 22, 0) 65%),
+    radial-gradient(75% 80% at 48% 42%, rgba(241, 107, 13, 0.14) 0%, rgba(241, 107, 13, 0) 70%),
+    linear-gradient(180deg, rgba(241, 107, 13, 0.08) 0%, rgba(230, 20, 22, 0.02) 50%, rgba(7, 7, 7, 1) 100%);
+}
+
+/* ============ KEYFRAME ANIMATIONS ============ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-flame {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(56, 189, 248, 0.65), 0 0 70px rgba(99, 102, 241, 0.35);
+  }
+}
+
+@keyframes draw-line {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+/* ============ UTILITY CLASSES ============ */
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-flame {
+  animation: pulse-flame 3s ease-in-out infinite;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Elena Voss Card arrow hover effect */
+.arrow-slide-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.arrow-slide-out {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arrow-slide-in {
+  position: absolute;
+  transform: translate(-150%, 150%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .arrow-slide-out {
+  transform: translate(150%, -150%);
+}
+
+.group:hover .arrow-slide-in {
+  transform: translate(0, 0);
+}
+
+/* ============ SCROLLBAR ============ */
+
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #070707;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -38,5 +141,31 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 212, 255, 0.5);
+  background: #F16B0D;
+}
+
+/* ============ SELECTION ============ */
+
+::selection {
+  background-color: rgba(241, 107, 13, 0.3);
+  color: #ffffff;
+}
+
+/* ============ REDUCED MOTION ============ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-float,
+  .animate-pulse-flame,
+  .animate-blink {
+    animation: none !important;
+  }
 }

@@ -12,3 +12,6 @@ dist/
 
 # TypeScript build cache
 *.tsbuildinfo
+
+# temporary mockups / reference images
+image_*.jpg

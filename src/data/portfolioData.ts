@@ -2,25 +2,43 @@ import { PersonalInfo, SkillCategory, ExperienceItem, ProjectItem, EducationItem
 
 export const personalInfo: PersonalInfo = {
   name: 'Monish P',
-  title: '.NET Developer',
-  tagline: 'Building enterprise web applications with C#, ASP.NET, React & Angular',
+  title: '.NET Full Stack Developer',
+  tagline: 'Building scalable web applications & intelligent digital experiences',
   location: 'Erode, Tamil Nadu, India',
   phone: '+91 9345789114',
   email: 'monishvp2002@gmail.com',
   linkedin: 'https://www.linkedin.com/in/monish-p-a12639219/',
   github: 'https://github.com/monishvp',
-  summary: '.NET Developer with 2+ years of experience designing and building enterprise web applications using C#, ASP.NET Framework, ASP.NET MVC/Web API, Entity Framework, LINQ, and SQL Server. Skilled in building scalable RESTful APIs, optimizing SQL Server data access, and delivering enterprise-grade backend solutions across the full Software Development Life Cycle — requirement analysis, API design, database optimization, testing, deployment, and production support. Complements strong .NET expertise with frontend experience in AngularJS and React, bringing a practical, .NET-first approach to full-stack development.',
-  profileImage: `${import.meta.env.BASE_URL}images/profile_dark.png`,
+  summary: 'Full Stack Developer with 2+ years of experience building and maintaining web applications using C#, ASP.NET, AngularJS, and Microsoft SQL Server. I work across frontend development, backend APIs, database operations, and application integration. I also explore AI-assisted development and workflow automation to improve productivity and build smarter digital solutions.',
+  profileImage: `${import.meta.env.BASE_URL}images/profile_nobg.png`,
   resumeUrl: `${import.meta.env.BASE_URL}Monish_P_Resume.pdf`
 };
 
 export const skills: SkillCategory[] = [
-  { category: '.NET Technologies', items: ['ASP.NET', 'ASP.NET MVC', 'ASP.NET Web API', 'Entity Framework', 'LINQ', 'RESTful API Design', 'Microservices Concepts'] },
-  { category: 'Languages', items: ['C#', 'SQL', 'JavaScript', 'TypeScript', 'Python'] },
-  { category: 'Databases', items: ['Microsoft SQL Server', 'PostgreSQL', 'Database Design & Query Optimization'] },
-  { category: 'Frontend', items: ['React.js', 'AngularJS', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript'] },
-  { category: 'Cloud & Tools', items: ['Azure Fundamentals', 'Git', 'GitHub', 'Visual Studio 2022', 'VS Code', 'Postman', 'Power BI', 'Cursor', 'Claude'] },
-  { category: 'Practices', items: ['Full Stack Development', 'REST API Development', 'Database Optimization', 'AI-Assisted Development', 'Workflow Automation (n8n)'] }
+  {
+    category: 'Backend Development',
+    items: ['C#', 'ASP.NET / .NET', 'ASP.NET MVC', 'ASP.NET Web API', 'REST APIs', 'Entity Framework', 'LINQ', 'Microservices Concepts']
+  },
+  {
+    category: 'Frontend Development',
+    items: ['AngularJS', 'React.js', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3']
+  },
+  {
+    category: 'Database',
+    items: ['Microsoft SQL Server', 'PostgreSQL', 'SQL Query Optimization', 'Database Design']
+  },
+  {
+    category: 'AI & Automation',
+    items: ['AI-Assisted Development', 'AI Integration', 'Python', 'n8n Workflow Automation', 'Intelligent Agents']
+  },
+  {
+    category: 'Mobile & Analytics',
+    items: ['Flutter', 'Node.js', 'Power BI', 'Azure Fundamentals']
+  },
+  {
+    category: 'Developer Tools',
+    items: ['Visual Studio 2022', 'VS Code', 'Git', 'GitHub', 'Postman', 'Cursor', 'Claude']
+  }
 ];
 
 export const experience: ExperienceItem[] = [
@@ -91,4 +109,3 @@ export const strengths: string[] = [
   'Quick learner with a track record of picking up new tools and frameworks independently (AI agent development, workflow automation).',
   'Clear communicator who works well with cross-functional teams (product, QA, design) in Agile environments.'
 ];
-

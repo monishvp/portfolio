@@ -1,47 +1,57 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaTrophy } from 'react-icons/fa';
+import { Trophy } from 'lucide-react';
 import { achievements } from '../data/portfolioData';
-import { Card } from './ui/card';
 
 export const Achievements: React.FC = () => {
   return (
-    <section id="achievements" className="py-24 bg-[#0d0d12] border-t border-white/[0.06]">
-      <div className="max-w-4xl mx-auto px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-extrabold text-center bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent mb-3"
-        >
-          Achievements
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-center text-gray-500 text-sm md:text-base mb-16"
-        >
-          Highlights & recognition
-        </motion.p>
+    <section id="achievements" className="relative w-full bg-[#070707] text-white py-24 px-6 md:px-10 border-t border-white/10">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-14">
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-xs uppercase tracking-[0.3em] text-[#FFA24C] font-semibold mb-3"
+          >
+            Recognition
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-6xl font-normal tracking-tight"
+          >
+            Key Highlights &amp; Milestones
+          </motion.h2>
+        </div>
 
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {achievements.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: -25 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/25 hover:bg-white/[0.04] transition-all flex flex-col justify-between"
             >
-              <Card className="flex items-start gap-5 p-6 hover:border-[#00d4ff]/60 hover:translate-x-1.5">
-                <div className="w-10 h-10 rounded-lg bg-[#7c3aed]/15 text-[#7c3aed] flex items-center justify-center text-lg shrink-0 mt-0.5">
-                  <FaTrophy />
-                </div>
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed">{item}</p>
-              </Card>
+              <div className="w-12 h-12 rounded-xl bg-[#F16B0D]/10 border border-[#F16B0D]/20 flex items-center justify-center text-[#FFA24C] mb-6">
+                <Trophy size={20} />
+              </div>
+
+              <p className="text-white/80 text-sm md:text-base leading-relaxed font-light">
+                {item}
+              </p>
+
+              <div className="mt-6 pt-4 border-t border-white/10 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F16B0D]" />
+                <span className="text-xs uppercase tracking-wider text-white/40 font-medium">
+                  Milestone 0{i + 1}
+                </span>
+              </div>
             </motion.div>
           ))}
         </div>
