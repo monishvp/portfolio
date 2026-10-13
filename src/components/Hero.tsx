@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaArrowDown } from 'react-icons/fa';
-import { ArrowUpRight, Sparkle } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import { Button } from './ui/button';
 import TypewriterText from './TypewriterText';
@@ -291,18 +291,6 @@ export const Hero: React.FC = () => {
         </motion.div>
       </motion.div>
 
-      {/* Decorative 4-pointed sparkle star matching image_e16a85b3.jpg */}
-      <motion.div
-        animate={{
-          scale: [1, 1.08, 1],
-          opacity: [0.35, 0.65, 0.35],
-          rotate: [0, 3, 0],
-        }}
-        transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-6 right-6 sm:bottom-10 sm:right-12 z-20 pointer-events-none select-none"
-      >
-        <Sparkle className="w-10 h-10 sm:w-12 sm:h-12 fill-white/35 text-white/20 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" />
-      </motion.div>
 
       {/* Scroll Down Indicator */}
       <motion.a
